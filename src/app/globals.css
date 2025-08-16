@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Define custom font faces */
+/* @font-face {
+  font-family: 'AvantGardeDemi';
+  src: url('/fonts/avantgarde_demi.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'VayuSans-SemiBold';
+  src: url('/fonts/VayuSans-SemiBold') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: 'YDYooncheB';
+  src: url('/fonts/YDYoonche_B.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'custome';
+  src: url('/fonts/custome.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* --font-avantgarde: 'AvantGardeDemi', 'Avant Garde', Arial, Helvetica, sans-serif; */
+  --font-VayuSans: 'VayuSans-SemiBold', Arial, Helvetica, sans-serif;
+  /* --font-yoonche: 'YDYooncheB', Arial, Helvetica, sans-serif; */
+  --font-custome: 'custome', Arial, Helvetica, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-yoonche);
+}
+
+/* Apply YDYoonche B font to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-custome);
+  font-weight: 600;
+}
+
+/* Apply AvantGarde Demi to all paragraphs */
+p {
+  font-family: var(--font-VayuSans);
+  font-weight: 500;
+}
