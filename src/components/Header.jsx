@@ -487,7 +487,7 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full py-4 sticky top-0 left-0 z-50 transition-transform duration-300 ${
+      className={`w-full py-4 sticky top-0 left-0 z-50 transition-transform duration-300 bg-[#ffffff] dark:bg-[#ffffff] ${
         showHeader
           ? isAtTop
             ? "bg-transparent"

@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const CardContent = {
   websites: [
@@ -23,19 +23,8 @@ const CardContent = {
   },
 };
 
+// Animation variants and transition
 const transition = { duration: 1, ease: "easeInOut" };
-
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-    },
-  },
-};
 
 const cardVariants = {
   hidden: {
@@ -66,9 +55,28 @@ const titleVariants = {
   },
 };
 
+const AnimatedCard = ({ children, className, ...props }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={cardVariants}
+      transition={transition}
+      style={{ willChange: "transform, opacity", ...props.style }}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 const About = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-white">
+    <section className="py-16 px-4 md:px-8 bg-[#ffffff] dark:bg-[#ffffff]">
       {/* Title Animation */}
       <motion.div
         className="text-center mb-12"
@@ -77,7 +85,7 @@ const About = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={titleVariants}
       >
-        <h2 className="text-4xl font-bold">What Sets Us Apart</h2>
+        <h2 className=" text-[#000000] dark:text-[#000000] text-4xl font-bold">What Sets Us Apart</h2>
         <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
           Bang for the Buck Marketing and Design. We don't just offer services, we
           provide solutions.
@@ -85,22 +93,14 @@ const About = () => {
       </motion.div>
 
       {/* Cards Container */}
-      <motion.div
-        className="grid md:grid-cols-3 gap-14 md:gap-8 max-w-7xl mx-auto"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-      >
+      <div className="grid md:grid-cols-3 gap-14 md:gap-8 max-w-7xl mx-auto">
         {/* Card 1: Websites */}
-        <motion.div
+        <AnimatedCard
           className="rounded-xl bg-orange-100 shadow-lg hover:shadow-2xl border border-gray-300 min-h-[400px] flex flex-col overflow-hidden"
-          variants={cardVariants}
           whileHover={{
             y: -8,
             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
           }}
-          transition={transition}
           style={{
             boxShadow:
               "0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
@@ -112,6 +112,7 @@ const About = () => {
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
               alt="Website Development"
               className="w-full h-52 object-cover"
+              loading="lazy"
             />
             {/* Gradient overlay to merge with card background */}
             <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-orange-100 to-transparent"></div>
@@ -130,24 +131,21 @@ const About = () => {
           </div>
 
           <div className="flex-grow px-4 pb-6">
-            <h3 className="text-xl md:text-2xl font-bold mb-3">High Converting Websites</h3>
+            <h3 className="text-xl text-[#000000] dark:text-[#000000] md:text-2xl font-bold mb-3">High Converting Websites</h3>
             <p className="text-gray-700 text-sm leading-relaxed">
               We create pixel-perfect websites that convert your visitors into
               customers effortlessly.
             </p>
           </div>
-        </motion.div>
+        </AnimatedCard>
 
         {/* Card 2: Campaigns */}
-        <motion.div
-          className="relative rounded-xl bg-blue-100 shadow-lg hover:shadow-2xl border border-gray-300 min-h-[400px] flex flex-col overflow-visible 
-          "
-          variants={cardVariants}
+        <AnimatedCard
+          className="relative rounded-xl bg-blue-100 shadow-lg hover:shadow-2xl border border-gray-300 min-h-[400px] flex flex-col overflow-visible"
           whileHover={{
             y: -8,
             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
           }}
-          transition={transition}
           style={{
             boxShadow:
               "0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
@@ -175,14 +173,14 @@ const About = () => {
             }}
           >
             <p className="text-xs text-gray-500">{CardContent.campaigns.date}</p>
-            <p className="text-xs">
-              Unique Visitors:{" "}
+            <p className="text-xs text-[#6a7282] dark:text-[#6a7282]">
+              Unique Visitors: {" "}
               <span className="font-bold">
                 {CardContent.campaigns.uniqueVisitors}
               </span>
             </p>
-            <p className="text-xs">
-              Total Pageviews:{" "}
+            <p className="text-xs text-[#6a7282] dark:text-[#6a7282]">
+              Total Pageviews: {" "}
               <span className="font-bold">
                 {CardContent.campaigns.totalPageviews}
               </span>
@@ -195,31 +193,29 @@ const About = () => {
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
               alt="Marketing Campaigns"
               className="w-full h-52 object-cover rounded-lg"
+              loading="lazy"
             />
             {/* Gradient overlay to merge with card background */}
             <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-blue-100 to-transparent rounded-b-lg"></div>
           </div>
 
           <div className="flex-grow px-4 pb-6">
-            <h3 className="text-xl md:text-2xl font-bold mb-3">Effective Campaigns</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-3 text-[#000000] dark:text-[#000000]">Effective Campaigns</h3>
             <p className="text-gray-700 text-sm leading-relaxed">
               We use our Performance Marketing skills to deliver ROIs like you've
               never seen before. From PPC ad management to retargeting campaigns,
               we do it all.
             </p>
           </div>
-        </motion.div>
+        </AnimatedCard>
 
         {/* Card 3: Communication */}
-        <motion.div
-          className="relative rounded-xl bg-green-100 shadow-lg hover:shadow-2xl border border-gray-300 min-h-[400px] flex flex-col overflow-visible 
-          "
-          variants={cardVariants}
+        <AnimatedCard
+          className="relative rounded-xl bg-green-100 shadow-lg hover:shadow-2xl border border-gray-300 min-h-[400px] flex flex-col overflow-visible"
           whileHover={{
             y: -8,
             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
           }}
-          transition={transition}
           style={{
             boxShadow:
               "0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
@@ -256,7 +252,7 @@ const About = () => {
             <p className="text-green-600 font-semibold text-xs">
               {CardContent.communication.status}
             </p>
-            <p className="mt-1 font-bold text-xs">
+            <p className="mt-1 font-bold text-xs text-[#6a7282] dark:text-[#6a7282]">
               {CardContent.communication.name}
             </p>
             <p className="text-xs text-gray-500">
@@ -270,20 +266,21 @@ const About = () => {
               src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop"
               alt="Communication"
               className="w-full h-52 object-cover rounded-lg"
+              loading="lazy"
             />
             {/* Gradient overlay to merge with card background */}
             <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-green-100 to-transparent rounded-b-lg"></div>
           </div>
 
           <div className="flex-grow px-4 pb-6">
-            <h3 className="text-xl md:text-2xl font-bold mb-3">Great Communication</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-3 text-[#000000] dark:text-[#000000]">Great Communication</h3>
             <p className="text-gray-700 text-sm leading-relaxed">
               Support and communication is key to delivering great outcomes on
               time. That is what we strive for all the time.
             </p>
           </div>
-        </motion.div>
-      </motion.div>
+        </AnimatedCard>
+      </div>
     </section>
   );
 };
