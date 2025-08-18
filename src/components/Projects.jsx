@@ -230,7 +230,7 @@ const subheading =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis magna aliquam erat volutpat.";
 
 const projects = [
-  { title: "Mastertary", year: "2016", img: "/assets/images/pngs/image.png" },
+  { title: "Mastertary", year: "2016", img: "/assets/images/pngs/loki.jpeg" },
   { title: "Branding Solutions", year: "2021", img: "/assets/images/pngs/image.png" },
   { title: "Traffic Grow", year: "2018", img: "/assets/images/pngs/image.png" },
   { title: "Roadmap", year: "2019", img: "/assets/images/pngs/image.png" },
