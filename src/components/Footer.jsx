@@ -17,6 +17,7 @@ const Footer = () => {
             />
             <h1 className="text-4xl font-bold">Hatchleap</h1>
           </div>
+          <div className="space-y-3.5 pt-1">
           <p className="mb-3 text-sm">
             Enter your email and receive information in your inbox
           </p>
@@ -34,6 +35,7 @@ const Footer = () => {
             By subscribing you agree to with our privacy policy and provide consent 
             to receive updates from our company.
           </p>
+          </div>
         </div>
 
         {/* Navigate */}
