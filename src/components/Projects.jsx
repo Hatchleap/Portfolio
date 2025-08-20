@@ -312,7 +312,7 @@ const Projects = () => {
 
       {/* View All Button */}
       <div className="flex justify-center mt-12">
-        <button className="rounded-full bg-[#d2ff00] text-black px-6 py-3 text-sm font-semibold shadow-lg hover:scale-105 transition-transform">
+        <button className="rounded-full bg-purple-600 text-black px-6 py-3 text-sm font-semibold shadow-lg hover:scale-105 transition-transform">
           View All
         </button>
       </div>
