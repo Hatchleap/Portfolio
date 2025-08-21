@@ -491,7 +491,7 @@ const Header = () => {
         showHeader
           ? isAtTop
             ? "bg-transparent"
-            : "backdrop-blur-md bg-black/40 shadow-md"
+            : "backdrop-blur-md bg-black/40 dark:bg-black/40 shadow-md"
           : "-translate-y-full"
       }`}
     >
