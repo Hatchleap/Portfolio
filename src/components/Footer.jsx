@@ -133,7 +133,7 @@ const Footer = () => {
   // Only render animated content after mount to avoid hydration mismatch
   if (!mounted) {
     return (
-      <footer className="bg-purple-500 text-white px-6 md:px-12 lg:px-16 py-12" ref={footerRef}>
+      <footer className="bg-black text-white px-6 md:px-12 lg:px-16 py-12" ref={footerRef}>
         {/* Optionally, render a static fallback or nothing */}
       </footer>
     );
@@ -142,19 +142,19 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="bg-purple-500 text-white px-6 md:px-12 lg:px-16 py-12"
+      className="bg-black text-white px-6 md:px-12 lg:px-16 py-12"
     >
       <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8 lg:gap-12">
         {/* Left Section */}
         <div className="md:w-1/2 space-y-4">
-          <h2 className={`text-4xl md:text-7xl font-bold ${base} ${revealed ? shown : hidden}`}>
+          <h2 className={`text-[#C204E2] text-4xl md:text-7xl font-bold ${base} ${revealed ? shown : hidden}`}>
             Let’s Talk
           </h2>
           <p className={`text-base md:text-lg leading-relaxed ${base} ${revealed ? `${shown} delay-100` : hidden}`}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <div className={`flex space-x-4 text-xl ${base} ${revealed ? `${shown} delay-200` : hidden}`}>
+          <div className={`text-[#C204E2] flex space-x-4 text-xl ${base} ${revealed ? `${shown} delay-200` : hidden}`}>
             <a href="#" aria-label="Facebook"><FaFacebookF /></a>
             <a href="#" aria-label="YouTube"><FaYoutube /></a>
             <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
@@ -164,7 +164,7 @@ const Footer = () => {
 
         {/* Middle Section (Address/Services links) */}
         <div className="md:w-1/4">
-          <h3 className={`font-semibold text-lg mb-4 ${base} ${revealed ? `${shown} delay-100` : hidden}`}>
+          <h3 className={`text-[#C204E2] font-semibold text-lg mb-4 ${base} ${revealed ? `${shown} delay-100` : hidden}`}>
             Services
           </h3>
           <ul className={`space-y-2 text-base ${base} ${revealed ? `${shown} delay-200` : hidden}`}>
@@ -188,7 +188,7 @@ const Footer = () => {
 
         {/* Right Section */}
         <div className="md:w-1/2 space-y-4">
-          <h3 className={`font-semibold text-lg ${base} ${revealed ? `${shown} delay-100` : hidden}`}>
+          <h3 className={`text-[#C204E2] font-semibold text-lg ${base} ${revealed ? `${shown} delay-100` : hidden}`}>
             Get the latest inspiration & insights
           </h3>
           <div className={`flex items-center bg-white rounded-full p-2 shadow mb-6 ${base} ${revealed ? `${shown} delay-200` : hidden}`}>
@@ -197,7 +197,7 @@ const Footer = () => {
               placeholder="Your Email address"
               className="flex-1 px-4 py-2 text-black outline-none rounded-full"
             />
-            <button className="bg-black text-white p-3 rounded-full hover:bg-gray-800">
+            <button className="bg-[#C204E2]  text-black p-3 rounded-full hover:bg-gray-800">
               <IoPaperPlane />
             </button>
           </div>
