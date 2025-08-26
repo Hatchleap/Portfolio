@@ -487,7 +487,7 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full py-4 sticky top-0 left-0 z-50 transition-transform duration-300 bg-[#ffffff] dark:bg-[#ffffff] ${
+      className={`w-full py-4 sticky top-0 left-0 z-50 transition-transform duration-300 bg-[#000000] dark:bg-[#000000] ${
         showHeader
           ? isAtTop
             ? "bg-transparent"
@@ -505,15 +505,15 @@ const Header = () => {
             height={32}
             unoptimized
           />
-          <span className="text-black text-2xl font-semibold">Hatchleap</span>
+          <span className="text-white text-2xl font-semibold">Hatchleap</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-2 text-sm font-bold text-white bg-black/40 backdrop-blur-md px-4 py-1 rounded-full shadow-lg">
+        <nav className="hidden lg:flex items-center space-x-2 text-sm font-bold text-white bg-[#242424] backdrop-blur-md px-4 py-1 rounded-full shadow-lg">
           <Link
             href="/"
             className={`px-4 py-1 rounded-full font-bold transition-all duration-300 hover:scale-105 ${
-              pathname === "/" ? "bg-gray-800 text-white" : "hover:text-gray-300"
+              pathname === "/" ? "bg-[#525252] text-white" : "hover:text-gray-300"
             }`}
           >
             HOME
@@ -523,7 +523,7 @@ const Header = () => {
             href="/about"
             className={`px-4 py-1 rounded-full font-bold transition-all duration-300 hover:scale-105 ${
               pathname === "/about"
-                ? "bg-gray-800 text-white"
+                ? "bg-[#525252] text-white"
                 : "hover:text-gray-300"
             }`}
           >
@@ -542,15 +542,15 @@ const Header = () => {
               <span>SERVICES</span>
               <span className="text-purple-500 text-2xl">▾</span>
             </div>
-            <div className="absolute left-0 top-full hidden group-hover:block bg-gray-900 rounded-lg shadow-lg w-44 animate-fadeIn z-50">
+            <div className="absolute left-0 top-full hidden group-hover:block bg-[#242424] rounded-lg shadow-lg w-44 animate-fadeIn z-50">
               <ul className="py-2 text-sm text-white">
-                <li className="px-4 py-2 hover:bg-gray-800 transition-all">
+                <li className="px-4 py-2 hover:bg-[#525252] transition-all">
                   <Link href="/services/web-development">Web Development</Link>
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-800 transition-all">
+                <li className="px-4 py-2 hover:bg-[#525252] transition-all">
                   <Link href="/services/app-development">App Development</Link>
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-800 transition-all">
+                <li className="px-4 py-2 hover:bg-[#525252] transition-all">
                   <Link href="/services/seo">SEO Services</Link>
                 </li>
               </ul>
@@ -561,7 +561,7 @@ const Header = () => {
             href="/case-studies"
             className={`px-4 py-1 rounded-full font-bold transition-all duration-300 hover:scale-105 ${
               pathname === "/case-studies"
-                ? "bg-gray-800 text-white"
+                ? "bg-[#525252] text-white"
                 : "hover:text-gray-300"
             }`}
           >
@@ -572,7 +572,7 @@ const Header = () => {
             href="/contact"
             className={`px-4 py-1 rounded-full font-bold transition-all duration-300 hover:scale-105 ${
               pathname === "/contact"
-                ? "bg-gray-800 text-white"
+                ? "bg-[#525252] text-white"
                 : "hover:text-gray-300"
             }`}
           >

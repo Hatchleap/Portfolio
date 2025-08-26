@@ -46,7 +46,7 @@ const Testimonial = () => {
   const { rating, review, name, role, image } = testimonials[current];
 
   return (
-    <section className="bg-white text-black py-16 px-6 lg:px-20 relative overflow-hidden">
+    <section className=" text-black py-16 px-6 lg:px-20 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,10 +55,11 @@ const Testimonial = () => {
         className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center"
       >
         {/* Left Section */}
+        
         <div className="flex flex-col gap-6">
-          <p className="uppercase text-sm tracking-wide text-purple-600">★ Testimonial</p>
+          <h2 className="text-4xl md:text-4xl font-bold text-black"><span className="text-[#C204E2]">★</span> Testimonial</h2>
           <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-            Hear what others say about <span className="text-purple-600">partnering with us</span>
+            Hear what others say about <span className="text-[#C204E2]">partnering with us</span>
           </h2>
           <p className="text-gray-400 max-w-md">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
@@ -69,7 +70,7 @@ const Testimonial = () => {
             <div className="flex flex-col">
               <div className="flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="text-purple-600 w-6 h-6 fill-purple-600" />
+                  <Star key={i} className="text-black w-6 h-6 fill-black" />
                 ))}
               </div>
               <p className="text-gray-400 mt-2">
@@ -91,10 +92,10 @@ const Testimonial = () => {
           {/* Stars */}
           <div className="flex gap-1 mb-4">
             {Array.from({ length: rating }).map((_, i) => (
-              <Star key={i} className="text-purple-600 w-5 h-5 fill-purple-600" />
+              <Star key={i} className="text-[#C204E2] w-5 h-5 fill-[#C204E2]" />
             ))}
             {Array.from({ length: 5 - rating }).map((_, i) => (
-              <Star key={i} className="text-gray-600 w-5 h-5" />
+              <Star key={i} className="text-[#C204E2] w-5 h-5" />
             ))}
           </div>
 
@@ -111,7 +112,7 @@ const Testimonial = () => {
               className="rounded-full border-2 border-purple-600"
             />
             <div>
-              <h4 className="font-semibold">{name}</h4>
+              <h4 className="font-semibold text-white">{name}</h4>
               <p className="text-sm text-gray-400">{role}</p>
             </div>
           </div>
@@ -124,13 +125,13 @@ const Testimonial = () => {
                   prev === 0 ? testimonials.length - 1 : prev - 1
                 )
               }
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-800 hover:bg-purple-600 transition"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#C204E2] transition"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => setCurrent((prev) => (prev + 1) % testimonials.length)}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-800 hover:bg-purple-600 transition"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#C204E2] transition"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

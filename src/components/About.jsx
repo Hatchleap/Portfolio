@@ -76,7 +76,7 @@ const AnimatedCard = ({ children, className, ...props }) => {
 
 const About = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-[#ffffff] dark:bg-[#ffffff]">
+    <section className="py-32 px-4 md:px-8 bg-white">
       {/* Title Animation */}
       <motion.div
         className="text-center mb-12"
@@ -85,7 +85,7 @@ const About = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={titleVariants}
       >
-        <h2 className=" text-[#000000] dark:text-[#000000] text-4xl font-bold">What Sets Us Apart</h2>
+        <h2 className=" text-black dark:text-black  text-4xl md:text-6xl font-bold leading-tight">What Sets Us Apart</h2>
         <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
           Bang for the Buck Marketing and Design. We don't just offer services, we
           provide solutions.
@@ -286,3 +286,94 @@ const About = () => {
 };
 
 export default About;
+
+
+
+// "use client";
+
+// import React from "react";
+// import { FaArrowRight } from "react-icons/fa";
+// import { motion } from "framer-motion";
+
+// const timelineData = [
+//   {
+//     title: "Your Success, Our Mission",
+//     desc: "We measure our success by the success of our clients. With a focus on results and a dedication to quality, our mission is to deliver digital solutions that make a real impact.",
+//     icon: "/icons/sample1.png", // Replace with your PNG path
+//   },
+//   {
+//     title: "Creators Of Digital Excellence",
+//     desc: "At the core of our agency is a commitment to excellence and creativity. We specialize in crafting digital solutions that not only meet your needs but also elevate your brand.",
+//     icon: "/icons/sample2.png", // Replace with your PNG path
+//   },
+//   {
+//     title: "Innovating The Digital Landscape",
+//     desc: "At the core of our agency is a commitment to excellence and creativity. We specialize in crafting digital solutions that not only meet your needs but also elevate your brand.",
+//     icon: "/icons/sample3.png", // Replace with your PNG path
+//   },
+//   {
+//     title: "Helping Brands Thrive Online",
+//     desc: "We craft experiences that help brands grow, engage audiences, and thrive in the digital world.",
+//     icon: "/icons/sample4.png", // Replace with your PNG path
+//   },
+// ];
+
+// const About = () => {
+//   return (
+//     <section className="relative w-full bg-white text-black py-16">
+//       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-6">
+//         {/* LEFT STATIC CONTENT */}
+//         <div className="lg:sticky lg:top-20 self-start">
+//           <p className="uppercase tracking-widest text-[#C204E2] text-sm font-semibold">
+//             About Agency
+//           </p>
+//           <h2 className="text-4xl md:text-5xl font-bold mt-4">
+//             Crafting <span className="text-[#C204E2]">unique digital</span>{" "}
+//             experiences
+//           </h2>
+//           <button className="mt-8 flex items-center gap-3 bg-neutral-800 text-white px-5 py-3 rounded-full hover:bg-neutral-700 transition">
+//             Contact Us{" "}
+//             <span className="bg-[#C204E2] p-2 rounded-full text-black">
+//               <FaArrowRight />
+//             </span>
+//           </button>
+//         </div>
+
+//         {/* RIGHT TIMELINE CONTENT */}
+//         <div className="relative border-l border-[#C204E2]/50 pl-8">
+//           {timelineData.map((item, index) => (
+//             <motion.div
+//               key={index}
+//               className="relative mb-12"
+//               initial={{ opacity: 0, y: 50 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.6, ease: "easeOut" }}
+//               viewport={{ once: true }}
+//             >
+//               {/* Circle with inner dot */}
+//               <span className="absolute -left-11 top-2 flex items-center justify-center w-6 h-6 border-2 border-[#C204E2] rounded-full">
+//                 <span className="w-2.5 h-2.5 bg-[#C204E2] rounded-full"></span>
+//               </span>
+
+//               {/* Icon above Title */}
+//               <div className="flex flex-col items-start">
+//                 <img
+//                   src={item.icon}
+//                   alt="icon"
+//                   className="w-10 h-10 object-contain mb-3"
+//                 />
+//                 <h3 className="text-xl font-semibold">{item.title}</h3>
+//               </div>
+
+//               <p className="mt-2 text-gray-600 text-sm leading-relaxed">
+//                 {item.desc}
+//               </p>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+// export default About;
+

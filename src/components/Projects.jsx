@@ -240,7 +240,7 @@ const Projects = () => {
   const words = heading.split(" ");
 
   return (
-    <div className="min-h-screen bg-white text-black px-6 md:px-12 lg:px-20 py-16">
+    <div className="min-h-screen  text-[#C204E2] px-6 md:px-12 lg:px-20 py-16">
       {/* Heading Section */}
       <motion.div
         initial="hidden"
@@ -264,7 +264,7 @@ const Projects = () => {
         </h1>
 
         <motion.p
-          className="text-lg md:text-xl text-gray-400 max-w-2xl"
+          className="text-lg md:text-xl text-white max-w-2xl"
           transition={transition}
           variants={textVariants}
         >
@@ -302,8 +302,8 @@ const Projects = () => {
 
               {/* Text under card */}
               <div className="mt-4 px-1">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-                <p className="text-sm text-gray-400">Design — {project.year}</p>
+                <h3 className="text-lg md:text-2xl font-semibold">{project.title}</h3>
+                <p className="text-sm md:text-lg text-gray-400">Design — {project.year}</p>
               </div>
             </motion.div>
           );
@@ -312,7 +312,7 @@ const Projects = () => {
 
       {/* View All Button */}
       <div className="flex justify-center mt-12">
-        <button className="text-white bg-gradient-to-br from-purple-600 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-purple-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        <button className="text-white bg-[#C204E2] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
           View All
         </button>
       </div>
@@ -321,3 +321,6 @@ const Projects = () => {
 };
 
 export default Projects;
+
+
+// bg-gradient-to-br from-purple-600 to-blue-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-purple-400
