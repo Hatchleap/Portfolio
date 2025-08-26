@@ -171,6 +171,7 @@ const Homie = () => {
           {menuOpen ? <HiX /> : <HiMenu />}
         </button>
       </nav>
+<hr className="w-full my-24 border-t-2 border-gray-800 opacity-85 relative z-30 hidden sm:block" />
 
       {/* Mobile Slide-in Menu */}
       <div
@@ -182,10 +183,12 @@ const Homie = () => {
         <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-[#C204E2]">About Us</Link>
         {/* ... add mobile dropdowns if needed ... */}
       </div>
+      
+
 
       {/* Hero Section */}
-      <section className="scrollreveal relative w-full flex flex-col min-h-[90vh] pt-[110px] pb-0 z-20">
-        <h1 className="w-full text-4xl sm:text-5xl lg:text-8xl font-light mb-8 md:mb-14 text-center md:text-left px-2 md:px-24">
+      <section className="scrollreveal relative w-full flex flex-col md:min-h-[70vh] min-h-[40vh] pt-[150px] md:pt-[1px] pb-0 z-20">
+        <h1 className="w-full text-4xl sm:text-5xl lg:text-8xl font-light mb-8 md:mb-14 text-center md:text-left px-4 md:px-24">
           Innovative solutions for <br />
           <span className="font-bold text-[#C204E2] text-5xl sm:text-6xl lg:text-8xl block min-h-[1.2em]">
             {heroTypedText}
@@ -194,71 +197,51 @@ const Homie = () => {
         </h1>
 
         {/* Hero Content Below */}
-        <div className="scrollreveal flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto gap-8 md:gap-16">
-          {/* Circular Learn More Button */}
-          <div className="flex flex-col items-center md:items-start flex-1">
-            <div className="relative w-28 h-28 md:w-36 md:h-36 flex items-center justify-center mb-6 md:mb-0">
-              <svg viewBox="0 0 120 120" className="absolute w-full h-full animate-spin-slow">
-                <defs>
-                  <path id="circle" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0" />
-                </defs>
-                <text fontSize="12" fill="#fff">
-                  <textPath xlinkHref="#circle">LEARN MORE • LEARN MORE • LEARN MORE • LEARN MO •</textPath>
-                </text>
-              </svg>
-              <button className="absolute inset-0 m-auto bg-[#C204E2] w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <circle cx="16" cy="16" r="16" fill="#C204E2" />
-                  <polygon points="13,10 23,16 13,22" fill="#222" />
-                </svg>
-              </button>
-            </div>
-          </div>
+       <div className="scrollreveal flex flex-col items-center justify-center w-full max-w-4xl mx-auto gap-8">
+    {/* Paragraph + CTA */}
+    <div className="flex flex-col items-center flex-1 text-center">
+      <p className="max-w-xl text-gray-200 text-base md:text-lg mb-6">
+        At our Creative Digital Agency, we bring your ideas to life by
+        crafting engaging, impactful digital experiences that captivate
+        audiences and drive results.
+      </p>
+      <button className="flex items-center gap-2 bg-zinc-900/80 hover:bg-[#C204E2] hover:text-black text-white font-medium px-8 py-4 rounded-full shadow-lg text-lg transition">
+        Get In Touch
+        <span className="bg-[#C204E2] text-black rounded-full p-2 ml-2">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path
+              d="M4 9h10M9 4l5 5-5 5"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
 
-          {/* Paragraph + CTA */}
-          <div className="flex flex-col items-center md:items-start flex-1">
-            <p className="max-w-xl text-gray-200 text-base md:text-lg mb-6 text-center md:text-left">
-              At our Creative Digital Agency, we bring your ideas to life by
-              crafting engaging, impactful digital experiences that captivate
-              audiences and drive results.
-            </p>
-            <button className="flex items-center gap-2 bg-zinc-900/80 hover:bg-[#C204E2] hover:text-black text-white font-medium px-8 py-4 rounded-full shadow-lg text-lg transition">
-              Get In Touch
-              <span className="bg-[#C204E2] text-black rounded-full p-2 ml-2">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path
-                    d="M4 9h10M9 4l5 5-5 5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
-
-        <style jsx>{`
-          @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-          }
-          .animate-blink {
-            animation: blink 0.8s infinite;
-          }
-          .animate-spin-slow {
-            animation: spin 10s linear infinite;
-          }
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-        `}</style>
-      </section>
+  <style jsx>{`
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .animate-blink {
+      animation: blink 0.8s infinite;
+    }
+    .animate-spin-slow {
+      animation: spin 10s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  `}</style>
+</section>
 
       {/* Marquee Section */}
-      <div className="bg-[#C204E2] text-black py-3 overflow-hidden relative z-20 mt-12 w-full">
+      <div className="bg-[#C204E2] text-black py-3 overflow-hidden relative z-20 mt-28 md:mt-20 w-full">
         <Marquee />
       </div>
     </main>
