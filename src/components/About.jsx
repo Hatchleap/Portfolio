@@ -77,6 +77,20 @@ const AnimatedCard = ({ children, className, ...props }) => {
 const About = () => {
   return (
     <section className="py-32 px-4 md:px-8 bg-white">
+      <div className="flex justify-center mb-12">
+        {/* <div className="border-2 border-gray-400 rounded-lg flex items-center justify-center"> */}
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-center text-2xl md:text-4xl font-bold text-black leading-none px-4 py-3"
+          >
+            <span className="text-[#C204E2] mr-2">✧</span>
+            About Us
+          </motion.h2>
+        {/* </div> */}
+      </div>
       {/* Title Animation */}
       <motion.div
         className="text-center mb-12"

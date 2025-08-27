@@ -46,7 +46,34 @@ const Testimonial = () => {
   const { rating, review, name, role, image } = testimonials[current];
 
   return (
-    <section className=" text-black py-16 px-6 lg:px-20 relative overflow-hidden">
+    <section className="text-black dark:text-black bg-white py-16 px-6 lg:px-20 relative overflow-hidden">
+      {/* Centered Section Title */}
+      {/* <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="text-4xl md:text-4xl font-bold text-black text-center w-full mb-12 border-2 border-black/85 border-r-4"
+      >
+        <span className="text-[#C204E2]">✧</span> Testimonial
+      </motion.h2> */}
+
+    <div className="flex justify-center mb-12">
+  {/* <div className="border-2 border-gray-400 rounded-lg flex items-center justify-center"> */}
+    <motion.h2
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+      className="flex items-center justify-center text-2xl md:text-4xl font-bold text-black leading-none px-4 py-3"
+    >
+      <span className="text-[#C204E2] mr-2">✧</span>
+      Testimonial
+    </motion.h2>
+  {/* </div> */}
+</div>
+
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,14 +82,14 @@ const Testimonial = () => {
         className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center"
       >
         {/* Left Section */}
-        
         <div className="flex flex-col gap-6">
-          <h2 className="text-4xl md:text-4xl font-bold text-black"><span className="text-[#C204E2]">★</span> Testimonial</h2>
           <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-            Hear what others say about <span className="text-[#C204E2]">partnering with us</span>
+            Hear what others say about{" "}
+            <span className="text-[#C204E2]">partnering with us</span>
           </h2>
-          <p className="text-gray-400 max-w-md">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
+          <p className="text-gray-600 max-w-md">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna.
           </p>
 
           <div className="flex items-center gap-6 mt-6">
@@ -70,10 +97,13 @@ const Testimonial = () => {
             <div className="flex flex-col">
               <div className="flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="text-black w-6 h-6 fill-black" />
+                  <Star
+                    key={i}
+                    className="text-[#C204E2] w-6 h-6 fill-[#C204E2]"
+                  />
                 ))}
               </div>
-              <p className="text-gray-400 mt-2">
+              <p className="text-gray-600 mt-2">
                 Eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
@@ -92,7 +122,10 @@ const Testimonial = () => {
           {/* Stars */}
           <div className="flex gap-1 mb-4">
             {Array.from({ length: rating }).map((_, i) => (
-              <Star key={i} className="text-[#C204E2] w-5 h-5 fill-[#C204E2]" />
+              <Star
+                key={i}
+                className="text-[#C204E2] w-5 h-5 fill-[#C204E2]"
+              />
             ))}
             {Array.from({ length: 5 - rating }).map((_, i) => (
               <Star key={i} className="text-[#C204E2] w-5 h-5" />
@@ -130,7 +163,9 @@ const Testimonial = () => {
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
-              onClick={() => setCurrent((prev) => (prev + 1) % testimonials.length)}
+              onClick={() =>
+                setCurrent((prev) => (prev + 1) % testimonials.length)
+              }
               className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#C204E2] transition"
             >
               <ChevronRight className="w-5 h-5" />

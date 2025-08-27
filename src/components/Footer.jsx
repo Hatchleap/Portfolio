@@ -133,7 +133,7 @@ const Footer = () => {
   // Only render animated content after mount to avoid hydration mismatch
   if (!mounted) {
     return (
-      <footer className="bg-black text-white px-6 md:px-12 lg:px-16 py-12" ref={footerRef}>
+      <footer className="bg-black dark:bg-black text-white px-6 md:px-12 lg:px-16 py-12" ref={footerRef}>
         {/* Optionally, render a static fallback or nothing */}
       </footer>
     );
@@ -142,9 +142,9 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className=" text-white px-6 md:px-12 lg:px-16 py-12"
+      className="bg-black dark:bg-black text-white px-6 md:px-12 lg:px-16 py-12"
     >
-      <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8 lg:gap-12">
+      <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8 lg:gap-12 ">
         {/* Left Section */}
         <div className="md:w-1/2 space-y-4">
           <h2 className={`text-[#C204E2] text-4xl md:text-7xl font-bold ${base} ${revealed ? shown : hidden}`}>

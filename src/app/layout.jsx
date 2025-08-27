@@ -28,17 +28,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <div
-          className="bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/assets/images/pngs/bgsite.jpg')" }} // put your image in /public/bg.jpg
-        >
+         
           {/* Optional overlay for readability */}
-          <div className="min-h-screen bg-black/30">
+          <div className="min-h-screen">
         {/* <Tag /> */}
         {/* <Header /> */}
         {children}
         <Footer />
-        </div>
         </div>
       </body>
     </html>

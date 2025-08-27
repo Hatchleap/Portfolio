@@ -98,7 +98,7 @@ const Homie = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full  z-10"></div>
 
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full z-50 px-4 md:px-12 py-4 flex items-center justify-between bg-transparent">
