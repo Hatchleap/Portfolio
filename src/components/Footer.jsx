@@ -133,7 +133,7 @@ const Footer = () => {
   // Only render animated content after mount to avoid hydration mismatch
   if (!mounted) {
     return (
-      <footer className="bg-black dark:bg-black text-white px-6 md:px-12 lg:px-16 py-12" ref={footerRef}>
+      <footer className="bg-[#121310] dark:[#121310] text-white px-6 md:px-12 lg:px-16 py-12" ref={footerRef}>
         {/* Optionally, render a static fallback or nothing */}
       </footer>
     );
@@ -142,12 +142,12 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="bg-black dark:bg-black text-white px-6 md:px-12 lg:px-16 py-12"
+      className="bg-[#121310] dark:[#121310] text-white px-6 md:px-12 lg:px-16 py-12"
     >
       <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8 lg:gap-12 ">
         {/* Left Section */}
         <div className="md:w-1/2 space-y-4">
-          <h2 className={`text-[#C204E2] text-4xl md:text-7xl font-bold ${base} ${revealed ? shown : hidden}`}>
+          <h2 className={`text-[#6100ff] text-4xl md:text-7xl font-bold ${base} ${revealed ? shown : hidden}`}>
             Let’s Talk
           </h2>
           <p className={`text-base md:text-lg leading-relaxed ${base} ${revealed ? `${shown} delay-100` : hidden}`}>
@@ -197,7 +197,7 @@ const Footer = () => {
               placeholder="Your Email address"
               className="flex-1 px-4 py-2 text-black outline-none rounded-full"
             />
-            <button className="bg-[#C204E2]  text-black p-3 rounded-full hover:bg-gray-800">
+            <button className="bg-[#6100ff]  text-black p-3 rounded-full hover:bg-gray-800">
               <IoPaperPlane />
             </button>
           </div>

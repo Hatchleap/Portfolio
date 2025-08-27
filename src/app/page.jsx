@@ -14,6 +14,7 @@ export default function Home() {
       {/* <Marquee /> */}
       <Homie />
       <About />
+      <Services />
       <Projects />
       <Contact />
       <Testimonial />

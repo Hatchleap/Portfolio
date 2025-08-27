@@ -58,14 +58,14 @@ const Testimonial = () => {
         <span className="text-[#C204E2]">✧</span> Testimonial
       </motion.h2> */}
 
-    <div className="flex justify-center mb-12">
+    <div className="flex justify-center ">
   {/* <div className="border-2 border-gray-400 rounded-lg flex items-center justify-center"> */}
     <motion.h2
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
-      className="flex items-center justify-center text-2xl md:text-4xl font-bold text-black leading-none px-4 py-3"
+      className="flex items-center justify-center text-sm md:text-md font-light text-black leading-none px-4 py-3"
     >
       <span className="text-[#6100ff] mr-2">✧</span>
       Testimonial
@@ -124,11 +124,11 @@ const Testimonial = () => {
             {Array.from({ length: rating }).map((_, i) => (
               <Star
                 key={i}
-                className="text-[#6100ff] w-5 h-5 fill-[#6100ff]"
+                className="text-white w-5 h-5 fill-white"
               />
             ))}
             {Array.from({ length: 5 - rating }).map((_, i) => (
-              <Star key={i} className="text-[#6100ff] w-5 h-5" />
+              <Star key={i} className="text-white w-5 h-5" />
             ))}
           </div>
 
