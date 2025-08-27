@@ -67,7 +67,7 @@ const Testimonial = () => {
       viewport={{ once: true }}
       className="flex items-center justify-center text-2xl md:text-4xl font-bold text-black leading-none px-4 py-3"
     >
-      <span className="text-[#C204E2] mr-2">✧</span>
+      <span className="text-[#6100ff] mr-2">✧</span>
       Testimonial
     </motion.h2>
   {/* </div> */}
@@ -85,7 +85,7 @@ const Testimonial = () => {
         <div className="flex flex-col gap-6">
           <h2 className="text-3xl md:text-4xl font-bold leading-snug">
             Hear what others say about{" "}
-            <span className="text-[#C204E2]">partnering with us</span>
+            <span className="text-[#6100ff]">partnering with us</span>
           </h2>
           <p className="text-gray-600 max-w-md">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit sed diam
@@ -99,7 +99,7 @@ const Testimonial = () => {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className="text-[#C204E2] w-6 h-6 fill-[#C204E2]"
+                    className="text-[#6100ff] w-6 h-6 fill-[#6100ff]"
                   />
                 ))}
               </div>
@@ -124,11 +124,11 @@ const Testimonial = () => {
             {Array.from({ length: rating }).map((_, i) => (
               <Star
                 key={i}
-                className="text-[#C204E2] w-5 h-5 fill-[#C204E2]"
+                className="text-[#6100ff] w-5 h-5 fill-[#6100ff]"
               />
             ))}
             {Array.from({ length: 5 - rating }).map((_, i) => (
-              <Star key={i} className="text-[#C204E2] w-5 h-5" />
+              <Star key={i} className="text-[#6100ff] w-5 h-5" />
             ))}
           </div>
 
@@ -158,7 +158,7 @@ const Testimonial = () => {
                   prev === 0 ? testimonials.length - 1 : prev - 1
                 )
               }
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#C204E2] transition"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#6100ff] transition"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -166,7 +166,7 @@ const Testimonial = () => {
               onClick={() =>
                 setCurrent((prev) => (prev + 1) % testimonials.length)
               }
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#C204E2] transition"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#6100ff] transition"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

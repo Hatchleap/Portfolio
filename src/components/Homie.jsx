@@ -76,7 +76,7 @@ const Homie = () => {
       <nav className="absolute top-0 left-0 w-full z-50 px-4 md:px-12 py-4 flex items-center justify-between bg-transparent">
         {/* Logo */}
         <div className="flex items-center gap-2 text-white font-bold text-2xl">
-          <span className="bg-[#C204E2] p-2 rounded-md">
+          <span className="bg-[#a000a0] p-2 rounded-md">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <circle cx="14" cy="14" r="14" fill="#C204E2" />
               <path d="M8 14L14 8L20 14" stroke="#222" strokeWidth="2" />
@@ -87,8 +87,8 @@ const Homie = () => {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex gap-8 text-white font-medium items-center">
-          <Link href="/" className="hover:text-[#C204E2] transition">Home</Link>
-          <Link href="/about" className="hover:text-[#C204E2] transition">About Us</Link>
+          <Link href="/" className="hover:text-[#a000a0] transition">Home</Link>
+          <Link href="/about" className="hover:text-[#a000a0] transition">About Us</Link>
 
           {/* Desktop Services Dropdown */}
           <div
@@ -96,13 +96,13 @@ const Homie = () => {
             onMouseEnter={() => setDesktopServicesOpen(true)}
             onMouseLeave={() => setDesktopServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 hover:text-[#C204E2] transition">
+            <button className="flex items-center gap-1 hover:text-[#a000a0] transition">
               Services <span className="text-lg">▾</span>
             </button>
             {desktopServicesOpen && (
               <div className="absolute left-0 mt-2 bg-black text-white rounded p-3 min-w-[140px] shadow-lg z-50">
-                <Link href="/branding" className="block hover:text-[#C204E2] py-1">Branding</Link>
-                <Link href="/web" className="block hover:text-[#C204E2] py-1">Web Design</Link>
+                <Link href="/branding" className="block hover:text-[#a000a0] py-1">Branding</Link>
+                <Link href="/web" className="block hover:text-[#a000a0] py-1">Web Design</Link>
               </div>
             )}
           </div>
@@ -113,22 +113,22 @@ const Homie = () => {
             onMouseEnter={() => setDesktopPagesOpen(true)}
             onMouseLeave={() => setDesktopPagesOpen(false)}
           >
-            <button className="flex items-center gap-1 hover:text-[#C204E2] transition">
+            <button className="flex items-center gap-1 hover:text-[#a000a0] transition">
               Pages <span className="text-lg">▾</span>
             </button>
             {desktopPagesOpen && (
               <div className="absolute left-0 mt-2 bg-black text-white rounded p-3 min-w-[140px] shadow-lg z-50">
-                <Link href="/portfolio" className="block hover:text-[#C204E2] py-1">Portfolio</Link>
-                <Link href="/blog" className="block hover:text-[#C204E2] py-1">Blog</Link>
+                <Link href="/portfolio" className="block hover:text-[#a000a0] py-1">Portfolio</Link>
+                <Link href="/blog" className="block hover:text-[#a000a0] py-1">Blog</Link>
               </div>
             )}
           </div>
 
-          <Link href="/contact" className="hover:text-[#C204E2] transition">Contact</Link>
+          <Link href="/contact" className="hover:text-[#a000a0] transition">Contact</Link>
         </div>
 
         {/* Desktop Social Icons */}
-        <div className="hidden lg:flex gap-5 text-[#C204E2] text-xl items-center">
+        <div className="hidden lg:flex gap-5 text-[#a000a0] text-xl items-center">
           <FaTwitter className="hover:text-white cursor-pointer" />
           <FaFacebookF className="hover:text-white cursor-pointer" />
           <FaInstagram className="hover:text-white cursor-pointer" />
@@ -136,7 +136,7 @@ const Homie = () => {
 
         {/* Hamburger (Mobile) */}
         <button
-          className="lg:hidden text-[#C204E2] text-3xl z-50"
+          className="lg:hidden text-[#a000a0] text-3xl z-50"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -152,41 +152,41 @@ const Homie = () => {
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-[#C204E2]">Home</Link>
-        <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-[#C204E2]">About Us</Link>
+        <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-[#a000a0]">Home</Link>
+        <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-[#a000a0]">About Us</Link>
 
         {/* Mobile Services Dropdown */}
         <button
-          className="flex justify-between items-center w-full hover:text-[#C204E2] transition"
+          className="flex justify-between items-center w-full hover:text-[#a000a0] transition"
           onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
         >
           Services <span>{mobileServicesOpen ? "▾" : "▸"}</span>
         </button>
         {mobileServicesOpen && (
           <div className="flex flex-col pl-4 mt-2 gap-2">
-            <Link href="/branding" onClick={() => setMenuOpen(false)} className="hover:text-[#C204E2]">Branding</Link>
-            <Link href="/web" onClick={() => setMenuOpen(false)} className="hover:text-[#C204E2]">Web Design</Link>
+            <Link href="/branding" onClick={() => setMenuOpen(false)} className="hover:text-[#a000a0]">Branding</Link>
+            <Link href="/web" onClick={() => setMenuOpen(false)} className="hover:text-[#a000a0]">Web Design</Link>
           </div>
         )}
 
         {/* Mobile Pages Dropdown */}
         <button
-          className="flex justify-between items-center w-full hover:text-[#C204E2] transition"
+          className="flex justify-between items-center w-full hover:text-[#a000a0] transition"
           onClick={() => setMobilePagesOpen(!mobilePagesOpen)}
         >
           Pages <span>{mobilePagesOpen ? "▾" : "▸"}</span>
         </button>
         {mobilePagesOpen && (
           <div className="flex flex-col pl-4 mt-2 gap-2">
-            <Link href="/portfolio" onClick={() => setMenuOpen(false)} className="hover:text-[#C204E2]">Portfolio</Link>
-            <Link href="/blog" onClick={() => setMenuOpen(false)} className="hover:text-[#C204E2]">Blog</Link>
+            <Link href="/portfolio" onClick={() => setMenuOpen(false)} className="hover:text-[#a000a0]">Portfolio</Link>
+            <Link href="/blog" onClick={() => setMenuOpen(false)} className="hover:text-[#a000a0]">Blog</Link>
           </div>
         )}
 
-        <Link href="/contact" onClick={() => setMenuOpen(false)} className="hover:text-[#C204E2]">Contact</Link>
+        <Link href="/contact" onClick={() => setMenuOpen(false)} className="hover:text-[#a000a0]">Contact</Link>
 
         {/* Mobile Social Icons */}
-        <div className="flex gap-5 text-[#C204E2] text-xl mt-auto mb-8">
+        <div className="flex gap-5 text-[#a000a0] text-xl mt-auto mb-8">
           <FaTwitter className="hover:text-white cursor-pointer" />
           <FaFacebookF className="hover:text-white cursor-pointer" />
           <FaInstagram className="hover:text-white cursor-pointer" />
@@ -197,9 +197,9 @@ const Homie = () => {
       <section className="relative w-full flex flex-col md:min-h-screen md:pt-[40px] pt-28 z-20 px-4 md:px-0 text-center">
         <h1 className="w-full text-4xl sm:text-5xl lg:text-[7rem] font-extralight mb-8 md:mb-14 text-center md:text-left px-4 md:px-12">
           Innovative solutions for <br />
-          <span className="font-bold text-[#C204E2] text-5xl sm:text-6xl lg:text-8xl block min-h-[1.2em]">
+          <span className="font-bold text-[#a000a0] text-5xl sm:text-6xl lg:text-8xl block min-h-[1.2em]">
             {heroTypedText}
-            <span className="border-r-2 border-[#C204E2] ml-1 animate-blink"></span>
+            <span className="border-r-2 border-[#a000a0] ml-1 animate-blink"></span>
           </span>
         </h1>
 
@@ -210,9 +210,9 @@ const Homie = () => {
             crafting engaging, impactful digital experiences that captivate
             audiences and drive results.
           </p>
-          <button className="flex items-center gap-2 bg-zinc-600/80 hover:bg-[#C204E2] hover:text-black text-white font-medium px-8 py-4 rounded-full shadow-lg text-lg transition">
+          <button className="flex items-center gap-2 bg-zinc-600/80 hover:bg-[#a000a0] hover:text-black text-white font-medium px-8 py-4 rounded-full shadow-lg text-lg transition">
             Get In Touch
-            <span className="bg-[#C204E2] text-black rounded-full p-2 ml-2">
+            <span className="bg-[#a000a0] text-black rounded-full p-2 ml-2">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                 <path
                   d="M4 9h10M9 4l5 5-5 5"
@@ -238,7 +238,7 @@ const Homie = () => {
       </section>
 
       {/* Marquee Section */}
-      <div className="bg-[#C204E2] text-black py-3 overflow-hidden relative z-20 mt-28 md:mt-20 w-full">
+      <div className="bg-[#a000a0] text-black py-3 overflow-hidden relative z-20 mt-28 md:mt-20 w-full">
         <Marquee />
       </div>
     </main>
