@@ -52,7 +52,7 @@ const Success = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={containerVariants}
-        className="relative w-full max-w-6xl rounded-xl p-[10px] border-8 overflow-hidden"
+        className="relative scrollreveal w-full max-w-6xl rounded-xl p-[10px] border-8 overflow-hidden"
       >
         {/* Top + side glowing border */}
         <div className="absolute inset-0 rounded-xl pointer-events-none">

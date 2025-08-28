@@ -121,7 +121,7 @@ const Process = () => {
                 ${step.color} stack-cards__item rounded-xl shadow-md p-6 
                 flex flex-col gap-2 
                 sticky top-16 md:top-24  
-                border-2 border-r-4 border-zinc-300
+                border-2 border-zinc-300
               `}
             >
               <div className="flex items-center gap-2 font-semibold text-lg md:text-xl text-black">

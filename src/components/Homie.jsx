@@ -182,7 +182,7 @@ const Homie = () => {
 
           {/* Hamburger (Mobile) */}
           <button
-            className="lg:hidden text-[#6100ff] text-3xl z-50"
+            className="lg:hidden text-[#ffffff] bg-[#6100ff] rounded-md text-3xl z-50"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
