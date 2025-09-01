@@ -88,7 +88,7 @@ const Services = () => {
               Our Service
             </motion.h2>
           </div>
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-black">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black">
             Here's What We Can Do For{" "}
             <span className="text-[#6100ff]"><br className="hidden md:block text-[#6100ff]" /> Your Brand.</span>
           </h2>

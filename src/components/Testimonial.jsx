@@ -83,7 +83,7 @@ const Testimonial = () => {
       >
         {/* Left Section */}
         <div className="flex flex-col gap-6">
-          <h2 className="text-3xl md:text-4xl font-bold leading-snug">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-snug">
             Hear what others say about{" "}
             <span className="text-[#6100ff]">partnering with us</span>
           </h2>

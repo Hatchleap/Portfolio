@@ -1,13 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 // Counter animation
-const Counter = ({ from, to, duration }) => {
+const Counter = ({ from, to, duration, trigger }) => {
   const [count, setCount] = useState(from);
 
   useEffect(() => {
+    if (!trigger) return; // run only when trigger is true
+
     let start = from;
     const end = to;
     const increment = (end - start) / (duration * 60);
@@ -23,7 +25,7 @@ const Counter = ({ from, to, duration }) => {
     }, 16);
 
     return () => clearInterval(timer);
-  }, [from, to, duration]);
+  }, [trigger, from, to, duration]);
 
   return <span>{count}%</span>;
 };
@@ -44,8 +46,14 @@ const itemVariants = {
 };
 
 const Success = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.3 }); // 👈 trigger only once
+
   return (
-    <section className="relative w-full flex justify-center px-4 py-16 bg-white">
+    <section
+      ref={ref}
+      className="relative w-full flex justify-center px-4 py-16 bg-white"
+    >
       {/* Border Wrapper with fade-out bottom */}
       <motion.div
         initial="hidden"
@@ -66,7 +74,7 @@ const Success = () => {
             variants={itemVariants}
             className="flex-1 text-black flex flex-col gap-6"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl  font-light">
               Expertise that <span className="font-semibold">drives</span> digital
             </h2>
 
@@ -74,7 +82,7 @@ const Success = () => {
             <div className="flex flex-col sm:flex-row gap-8">
               <div>
                 <h2 className="md:text-5xl text-3xl font-bold text-[#6100ff]">
-                  +<Counter from={0} to={23} duration={2} />
+                  +<Counter from={0} to={23} duration={2} trigger={inView} />
                 </h2>
                 <p className="text-sm md:text-sm text-gray-700">
                   By optimizing your website for search engines.
@@ -82,7 +90,7 @@ const Success = () => {
               </div>
               <div>
                 <h2 className="md:text-5xl text-3xl font-extrabold text-[#6100ff]">
-                  +<Counter from={0} to={11} duration={2} />
+                  +<Counter from={0} to={11} duration={2} trigger={inView} />
                 </h2>
                 <p className="text-sm text-gray-700">
                   Rise in revenue as more visitors convert into paying customers.

@@ -8,6 +8,8 @@ import Marquee from "@/components/Marquee";
 import Homie from "@/components/Homie";
 import Process from "@/components/Process";
 import Success from "@/components/Success";
+import Socials from "@/components/Socials";
+// import Features from "@/components/Features";
 
 export default function Home() {
   return (
@@ -21,7 +23,9 @@ export default function Home() {
       <Success />
       <Projects />
       <Contact />
+      <Socials />
       <Testimonial />
+      {/* <Features /> */}
     </div>
   );
 }

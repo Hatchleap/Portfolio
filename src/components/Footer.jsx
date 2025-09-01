@@ -147,7 +147,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8 lg:gap-12 ">
         {/* Left Section */}
         <div className="md:w-1/2 space-y-4">
-          <h2 className={`text-[#6100ff] text-4xl md:text-7xl font-bold ${base} ${revealed ? shown : hidden}`}>
+          <h2 className={`text-[#6100ff] text-4xl md:text-7xl  font-bold ${base} ${revealed ? shown : hidden}`}>
             Let’s Talk
           </h2>
           <p className={`text-base md:text-lg leading-relaxed ${base} ${revealed ? `${shown} delay-100` : hidden}`}>

@@ -99,7 +99,7 @@ const About = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={titleVariants}
       >
-        <h2 className=" text-black dark:text-black  text-2xl md:text-4xl font-bold leading-tight">What Sets Us Apart</h2>
+        <h2 className=" text-black dark:text-black  text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">What Sets Us Apart</h2>
         <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
           Bang for the Buck Marketing and Design. We don't just offer services, we
           provide solutions.

@@ -76,13 +76,13 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center text-sm md:text-md font-light text-black leading-none px-4 py-3"
+            className="flex items-center justify-center text-sm md:text-md font-light text-black leading-none "
           >
             <span className="text-[#6100ff] mr-2">✧</span>
             Projects
           </motion.h2>
         </div>
-        <h2 className="text-4xl md:text-5xl font-light leading-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl  font-light leading-tight">
           Our proven <span className="text-[#6100ff] font-bold">process</span>{" "}
           for achieving success
         </h2>

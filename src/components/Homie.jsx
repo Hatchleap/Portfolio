@@ -88,7 +88,7 @@ const Homie = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+      <div className="absolute inset-0 z-10"></div>
 
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full z-50">
@@ -284,7 +284,7 @@ const Homie = () => {
       </div>
 
       {/* Hero Section with Blur Reveal Animation */}
-      <section className="relative z-20 flex flex-col items-center justify-center text-center md:text-left px-4 md:px-12 w-full min-h-screen pt-28 md:pt-24">
+      <section className="relative z-20 flex flex-col items-center justify-center text-center md:text-left px-4 md:px-12 w-full min-h-screen pt-10 md:pt-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -292,16 +292,28 @@ const Homie = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center text-center gap-6"
         >
-          <motion.h1
-            className="w-full text-3xl sm:text-3xl lg:text-[4rem] font-extralight"
-            variants={itemVariants}
-          >
-            Innovative solutions for <br />
-            <span className="font-bold text-[#6100ff] py-5 text-5xl sm:text-7xl lg:text-8xl block min-h-[1.2em]">
-              {heroTypedText}
-              <span className="border-r-2 border-[#6100ff] ml-1 animate-blink"></span>
-            </span>
-          </motion.h1>
+          <motion.div
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="flex flex-col items-center text-center gap-6"
+>
+  <motion.p
+    className="w-full text-3xl sm:text-3xl lg:text-[4rem] font-extralight"
+    variants={itemVariants}
+  >
+    Innovative solutions for
+  </motion.p>
+  <motion.h1
+    className="w-full font-bold text-[#6100ff] py-5 text-5xl sm:text-7xl lg:text-8xl block min-h-[1.2em]"
+    variants={itemVariants}
+  >
+    {heroTypedText}
+    <span className="border-r-2 border-[#6100ff] ml-1 animate-blink"></span>
+  </motion.h1>
+  {/* ...rest of the code... */}
+</motion.div>
 
           <motion.p
             className="max-w-xl text-gray-200 text-base md:text-lg text-md"
@@ -315,7 +327,7 @@ const Homie = () => {
           <motion.div variants={itemVariants}>
             <button className="flex items-center gap-2 bg-zinc-600/80 hover:bg-[#6100ff] hover:text-white text-white font-medium px-4 py-1.5 rounded-full shadow-lg text-md transition">
               Get In Touch
-              <span className="bg-[#6100ff] text-black rounded-full p-2 ml-2">
+              <span className="bg-[#6100ff] text-white rounded-full p-2 ml-2">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path
                     d="M4 9h10M9 4l5 5-5 5"
